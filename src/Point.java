@@ -7,8 +7,10 @@ import java.util.Random;
  */
 public class Point 
 {
-	double x;
-	double y;
+	private double x;
+	private double y;
+	final int maxX = 800;
+	final int maxY = 600;
 
 	public Point(double x, double y) 
 	{
@@ -25,8 +27,8 @@ public class Point
 	{
 		super();
 		Random rand = new Random();
-		this.x = rand.nextDouble() * 800;
-		this.y = rand.nextDouble() * 600;
+		this.x = rand.nextDouble() * maxX;
+		this.y = rand.nextDouble() * maxY;
 		if (!(this instanceof Junction))
 		{
 			System.out.println(String.format("Creating Point (%.2f, %.2f)", this.x, this.y));
@@ -39,14 +41,14 @@ public class Point
 	}
 	public void setX(double x) 
 	{
-		if (validate(x, 800)) 
+		if (validate(x, maxX)) 
 		{
 			this.x = x;
 		}
 		else
 		{
 			Random rand = new Random();
-			this.x = rand.nextDouble() * 800;
+			this.x = rand.nextDouble() * maxX;
 			System.out.println(String.format("%.2f is illegal value for x and has been replaced with %f", x, this.x));
 		}
 	}
@@ -56,14 +58,14 @@ public class Point
 	}
 	public void setY(double y) 
 	{
-		if (validate(y, 600))
+		if (validate(y, maxY))
 		{
 			this.y = y;
 		}
 		else
 		{
 			Random rand = new Random();
-			this.y = rand.nextDouble() * 600;
+			this.y = rand.nextDouble() * maxY;
 			System.out.println(String.format("%.2f is illegal value for y and has been replaced with %f", y, this.y));
 		}
 	}
