@@ -16,7 +16,7 @@ public class Junction extends Point
 		EnteringRoads = new ArrayList<Road>();
 		trafficLight = new TrafficLight();
 		junctionNum = ++counter;
-		System.out.println(String.format("Creating " + this + " at Point (%.2f, %.2f)", x, y));
+		System.out.println(String.format("Creating " + this + " at Point (%.2f, %.2f)", getX(), getY()));
 	}
 	@Override
 	public String toString() 
