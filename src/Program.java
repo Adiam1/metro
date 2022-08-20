@@ -28,13 +28,13 @@ public class Program {
 		System.out.println("The length of "+road+" is "+road.getLength());
 		System.out.println(j.getExitingRoads());
 	
-/*	
+
 		System.out.println("\n=========Testing class Map=========");
 		System.out.println("\n Map #1");
 		
 		Map map=new Map(10);
 		System.out.println(map.calcShortestPath(map.getJunctions().get(4), map.getJunctions().get(0)));
-		
+		/*
 		System.out.println("\n Map #2");
 		ArrayList<Junction> junctions=new ArrayList<Junction>();
 		junctions.add(new Junction(0, 0));
