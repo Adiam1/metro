@@ -22,7 +22,7 @@ public class Program {
 
 		Road road=new Road (j,k);
 		System.out.println("The length of "+road+" is "+road.getLength());
-	/*	System.out.println(road.getStart().getExitingRoads());
+    	System.out.println(road.getStart().getExitingRoads());
 		System.out.println(road.getEnd().getEnteringRoads());
 		road=new Road(j,j);
 		System.out.println("The length of "+road+" is "+road.getLength());
