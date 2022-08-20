@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 
 public class Junction extends Point
@@ -24,6 +23,39 @@ public class Junction extends Point
 	{
 		return "Junction " + junctionNum;
 	}
+	public ArrayList<Road> getExitingRoads() 
+	{
+		return ExitingRoads;
+	}
+	public void setExitingRoads(ArrayList<Road> exitingRoads) 
+	{
+		ExitingRoads = exitingRoads;
+	}
+	public ArrayList<Road> getEnteringRoads() 
+	{
+		return EnteringRoads;
+	}
+	public void setEnteringRoads(ArrayList<Road> enteringRoads) 
+	{
+		EnteringRoads = enteringRoads;
+	}
+	public void addEnteringRoads(Road enteringRoad) 
+	{
+		EnteringRoads.add(enteringRoad);
+	}
+	public void addExitingRoads(Road exitingRoad) 
+	{
+		ExitingRoads.add(exitingRoad);
+	}
+	public int getJunctionNum() 
+	{
+		return junctionNum;
+	}
+	public void setJunctionNum(int junctionNum) 
+	{
+		this.junctionNum = junctionNum;
+	}
+	
 
 	
 	
