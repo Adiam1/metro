@@ -20,7 +20,6 @@ public class Road
 		{
 			this.enteringJunction = enteringJunction;
 		}
-
 		this.exitingJunction.addExitingRoads(this);
 		this.enteringJunction.addEnteringRoads(this);
 		double length = getLength();
