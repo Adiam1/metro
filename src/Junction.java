@@ -55,8 +55,4 @@ public class Junction extends Point
 	{
 		this.junctionNum = junctionNum;
 	}
-	
-
-	
-	
 }
