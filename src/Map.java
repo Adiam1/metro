@@ -18,27 +18,28 @@ public class Map
 			return;
 		}
 		Random rand = new Random();
-		ArrayList<Integer> blockedNumbers = new ArrayList <Integer>();
-		int num;
+		
 		for(int j = 0; j < junctionAmount; j++)
 		{
-			blockedNumbers.add(j)
-;			for(int i = 0; i< rand.nextInt(junctionAmount); i++)
+			boolean isCreatinJunction;
+;			for(int i = 0; i < junctionAmount; i++)
 			{
-				num = rand.nextInt(junctionAmount);
-				while (blockedNumbers.contains(num))
-				{
-					num = rand.nextInt(junctionAmount);
-				}
-				blockedNumbers.add(num);
-				Road road = new Road(junctions.get(j), junctions.get(num));
+				isCreatinJunction = rand.nextBoolean();
 				
+				if(i != j && isCreatinJunction) 
+				{
+					Road road = new Road(junctions.get(j), junctions.get(i));
+				}
 				
 			}
 			
-			blockedNumbers.clear();
-			
 		}
+	}
+	
+	public Map(ArrayList<Junction> junctions, ArrayList<Road> roads)
+	{
+		super();
+		//adding here traffic lights, junctions and roads are already given
 	}
 
 	public ArrayList<Junction> getJunctions() 
