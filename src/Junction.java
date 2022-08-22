@@ -18,6 +18,16 @@ public class Junction extends Point
 		junctionNum = ++counter;
 		System.out.println(String.format("Creating " + this + " at Point (%.2f, %.2f)", getX(), getY()));
 	}
+	
+	public Junction(double x, double y) 
+	{
+		super();
+		ExitingRoads = new ArrayList<Road>();;
+		EnteringRoads = new ArrayList<Road>();
+		trafficLight = new TrafficLight();
+		junctionNum = ++counter;
+		System.out.println(String.format("Creating " + this + " at Point (%.2f, %.2f)", getX(), getY()));
+	}
 	@Override
 	public String toString() 
 	{
