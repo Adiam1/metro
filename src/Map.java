@@ -68,6 +68,16 @@ public class Map
 		this.roads = roads;
 	}
 	
+	public ArrayList<Road> getRoute() 
+	{
+		return route;
+	}
+
+	public void setRoute(ArrayList<Road> route) 
+	{
+		this.route = route;
+	}
+
 	public ArrayList<Road> creatingRoute()
 	{
 		int junctionsLength = junctions.size();
