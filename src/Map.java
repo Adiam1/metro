@@ -5,6 +5,7 @@ public class Map
 {
 	private ArrayList<Junction> junctions;
 	private ArrayList<Road> roads;
+	private ArrayList<Road> route = new ArrayList<Road>();;
 
 	public Map(int junctionAmount) 
 	{
@@ -67,6 +68,26 @@ public class Map
 		this.roads = roads;
 	}
 	
-	
+	public ArrayList<Road> creatingRoute()
+	{
+		int junctionsLength = junctions.size();
+		Random rand = new Random();
+		int junctionIndex = rand.nextInt(junctionsLength);
+		final int maxRoadLength = 4;
+		Junction beginningJunction = junctions.get(junctionIndex);
+		int exitingRoadsLength = beginningJunction.getExitingRoads().size();
+		int i = 0;
+		while(i < maxRoadLength && exitingRoadsLength > 0) 
+		{
+			int exitRoadIndex = rand.nextInt(exitingRoadsLength);
+			Road newRoad = beginningJunction.getExitingRoads().get(exitRoadIndex);
+			route.add(newRoad);
+			beginningJunction = newRoad.getEnd();
+			exitingRoadsLength = beginningJunction.getExitingRoads().size();
+			i++;
+		}
+		
+		return route;
+	}
 	
 }
