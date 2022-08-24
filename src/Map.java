@@ -21,22 +21,25 @@ public class Map
 			return;
 		}
 		Random rand = new Random();
-		
+		ArrayList<Integer> blockedNumbers = new ArrayList<Integer>(); 
+		int num;
 		for(int j = 0; j < junctionAmount; j++)
 		{
-			boolean isCreatinJunction;
-;			for(int i = 0; i < junctionAmount; i++)
+			blockedNumbers.add(j)
+;			for(int i = 0; i< rand.nextInt(junctionAmount); i++)
 			{
-				isCreatinJunction = rand.nextBoolean();
-				
-				if(i != j && isCreatinJunction) 
+				num = rand.nextInt(junctionAmount);
+				while (blockedNumbers.contains(num))
 				{
-					Road road = new Road(junctions.get(j), junctions.get(i));
-					roads.add(road);
+					num = rand.nextInt(junctionAmount);
 				}
-				
+				blockedNumbers.add(num);
+				Road road = new Road(junctions.get(j), junctions.get(num));
+				roads.add(road);
 			}
-			
+
+			blockedNumbers.clear();
+
 		}
 	}
 	
@@ -86,6 +89,11 @@ public class Map
 		final int maxRoadLength = 4;
 		Junction beginningJunction = junctions.get(junctionIndex);
 		int exitingRoadsLength = beginningJunction.getExitingRoads().size();
+		while(exitingRoadsLength == 0)
+		{
+			junctionIndex = rand.nextInt(junctionsLength);
+			beginningJunction = junctions.get(junctionIndex);
+		}
 		int i = 0;
 		while(i < maxRoadLength && exitingRoadsLength > 0) 
 		{
