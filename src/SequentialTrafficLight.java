@@ -1,12 +1,12 @@
 import java.util.Random;
 
-public class RandomTrafficLight extends TrafficLight
+public class SequentialTrafficLight extends TrafficLight
 {
 	Road currentGreen;
 	private int pulseTime;
 	
 	
-	public RandomTrafficLight(Junction junction) 
+	public SequentialTrafficLight(Junction junction) 
 	{
 		super(junction);
 		if (this.getJunction().getEnteringRoads().size() > 0)
@@ -34,14 +34,18 @@ public class RandomTrafficLight extends TrafficLight
 	public void nextGreen()
 	{
 		int size = this.getJunction().getEnteringRoads().size();
-		Random rand = new Random();
-		int nextIndex = rand.nextInt(size);
-		Road nextGreen = this.getJunction().getEnteringRoads().get(nextIndex);
+		for (int i=0; i < size; i++)
+		{
+			if (this.getJunction().getEnteringRoads().get(i) == this.currentGreen) 
+			{
+				currentGreen = this.getJunction().getEnteringRoads().get(i++%size);
+			}
+		}
 	}
 	
 	@Override
 	public String toString() 
 	{
-		return "Random " + super.toString();
+		return "Sequential " + super.toString();
 	}
 }

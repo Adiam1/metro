@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Junction extends Point
 {
@@ -14,7 +15,7 @@ public class Junction extends Point
 		super();
 		ExitingRoads = new ArrayList<Road>();;
 		EnteringRoads = new ArrayList<Road>();
-		trafficLight = new TrafficLight();
+		trafficLight = null;
 		junctionNum = ++counter;
 		System.out.println(String.format("Creating " + this + " at Point (%.2f, %.2f)", getX(), getY()));
 	}
@@ -24,7 +25,7 @@ public class Junction extends Point
 		super();
 		ExitingRoads = new ArrayList<Road>();;
 		EnteringRoads = new ArrayList<Road>();
-		trafficLight = new TrafficLight();
+		trafficLight = null;
 		junctionNum = ++counter;
 		System.out.println(String.format("Creating " + this + " at Point (%.2f, %.2f)", getX(), getY()));
 	}
@@ -65,4 +66,28 @@ public class Junction extends Point
 	{
 		this.junctionNum = junctionNum;
 	}
+
+	public TrafficLight getTrafficLight() 
+	{
+		return trafficLight;
+	}
+
+	public void setTrafficLight() 
+	{
+		Random rand = new Random();
+		
+		if(rand.nextBoolean())
+		{
+			this.trafficLight = new RandomTrafficLight(this);
+		}
+		else
+		{
+			this.trafficLight = new SequentialTrafficLight(this);
+		}
+		
+		System.out.println(this.trafficLight);
+		
+	}
+	
+	
 }

@@ -1,31 +1,17 @@
 import java.util.Random;
 
-public class TrafficLight
+public abstract class TrafficLight
 {
 	private int pulseTime;
 	private Junction junction;
 	final int maxVal = 4;
 	final int minVal = 2;
 
-	public TrafficLight(int pulseTime, Junction junction) 
+	public TrafficLight(Junction junction) 
 	{
 		super();
+		setPulseTime();
 		this.junction = junction;
-		if(pulseTime <= maxVal && minVal <= pulseTime)
-		{
-			this.pulseTime = pulseTime;
-		}
-		else 
-		{
-			pulseTime = calcPulse();
-		}
-
-	}
-	
-	public TrafficLight() 
-	{
-		this.junction = null;
-		pulseTime = calcPulse();
 	}
 
 	public int getPulseTime() 
@@ -33,22 +19,30 @@ public class TrafficLight
 		return pulseTime;
 	}
 
-	public void setPulseTime(int pulseTime) 
+	public void setPulseTime() 
 	{
-		this.pulseTime = pulseTime;
+		Random rand = new Random();
+		pulseTime = rand.nextInt(maxVal-minVal+1) + minVal;
+	}
+	public Junction getJunction() 
+	{
+		return junction;
+	}
+
+	public void setJunction(Junction junction)
+	{
+		this.junction = junction;
 	}
 
 	@Override
 	public String toString() 
 	{
-		return "TrafficLight [pulseTime=" + pulseTime + "]";
+		return "TrafficLights Junction " + this.junction.getJunctionNum() + ", delay= " + getPulseTime()+ ": green light on " + this.getCurrentGreen();
 	}
 	
-	public int calcPulse()
-	{
-		Random r = new Random();
-		return r.nextInt(maxVal - minVal) + minVal;
-	}
+	public abstract void check();
+	public abstract Road getCurrentGreen();
+
 	
 	
 	

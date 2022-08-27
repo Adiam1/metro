@@ -5,7 +5,7 @@ public class Map
 {
 	private ArrayList<Junction> junctions;
 	private ArrayList<Road> roads;
-	private ArrayList<Road> route = new ArrayList<Road>();;
+	private ArrayList<Road> route = new ArrayList<Road>();
 
 	public Map(int junctionAmount) 
 	{
@@ -37,9 +37,17 @@ public class Map
 				Road road = new Road(junctions.get(j), junctions.get(num));
 				roads.add(road);
 			}
-
 			blockedNumbers.clear();
-
+		}
+		for (int i = 0; i < junctionAmount;i++) 
+		{
+			if (0 < junctions.get(i).getEnteringRoads().size())
+			{
+				if (rand.nextBoolean() && rand.nextBoolean())
+				{
+					junctions.get(i).setTrafficLight();
+				}
+			}
 		}
 	}
 	
