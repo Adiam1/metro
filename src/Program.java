@@ -34,9 +34,17 @@ public class Program {
 		System.out.println("\n Map #1");
 		
 		Map map=new Map(10);
-		//System.out.println(map.creatingRoute());
+		System.out.println(map.creatingRoute());
+		Vehicle vehicle = new Vehicle(map);
+		for(int turn = 0; turn < 10; turn++)
+		{
+			vehicle.move();
+		}
+		
+		System.out.println(map.creatingRoute());
 		
 		//System.out.println(map.calcShortestPath(map.getJunctions().get(4), map.getJunctions().get(0)));
+		/*
 		System.out.println("\n Map #2");
 		ArrayList<Junction> junctions=new ArrayList<Junction>();
 		junctions.add(new Junction(0, 0));
@@ -49,10 +57,11 @@ public class Program {
 		roads.add(new Road(junctions.get(2), junctions.get(3)));
 		roads.add(new Road(junctions.get(3), junctions.get(0)));
 		roads.add(new Road(junctions.get(0), junctions.get(2)));
-		/*
 		map=new Map(junctions, roads);
+		*/
+
 					
-		
+		/*
 		System.out.println("\n===========Testing the game============\n");
 		
 		DrivingGame game=new DrivingGame(10, 5);

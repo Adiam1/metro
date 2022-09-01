@@ -28,7 +28,7 @@ public class Road
 	
 	public double getLength() 
 	{
-		return  enteringJunction.calcDistance(exitingJunction);
+		return  exitingJunction.calcDistance(enteringJunction);
 	}
 
 	@Override
