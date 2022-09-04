@@ -1,10 +1,9 @@
-
-import java.util.Random;
-
 /*
  * Yuval Gonen, ID: 314832163
  * Adi Amshalem ID: 318784352
  */
+import java.util.Random;
+
 public class Point 
 {
 	private double x;

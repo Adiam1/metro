@@ -1,3 +1,7 @@
+/*
+ * Yuval Gonen, ID: 314832163
+ * Adi Amshalem ID: 318784352
+ */
 import java.util.ArrayList;
 import java.util.Random;
 

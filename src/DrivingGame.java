@@ -29,7 +29,12 @@ public class DrivingGame
 		
 		for(int i = 0; i < turns;i++)
 		{
-			System.out.println("turn "+ (i + 1));
+			System.out.println("Turn "+ (i + 1));
+			
+			for(Vehicle v: vehicles)
+			{
+				v.move();
+			}
 			
 			for(Junction j: map.getJunctions())
 			{
@@ -37,11 +42,6 @@ public class DrivingGame
 				{
 					j.getTrafficLight().check();
 				}
-			}
-			
-			for(Vehicle v: vehicles)
-			{
-				v.move();
 			}
 		}
 	}

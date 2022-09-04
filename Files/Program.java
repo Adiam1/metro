@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Program {
 
 	public static void main(String[] args) {
-		System.out.println("=========Testing class Point=========");
+		/*System.out.println("=========Testing class Point=========");
 		Point a=new Point(0,0);
 		Point b=new Point(8,6);
 		System.out.println("The distance between a and b is " +a.calcDistance(b));
@@ -50,11 +50,11 @@ public class Program {
 		roads.add(new Road(junctions.get(2), junctions.get(3)));
 		roads.add(new Road(junctions.get(3), junctions.get(0)));
 		roads.add(new Road(junctions.get(0), junctions.get(2)));
-		map=new Map(junctions, roads);
+		map=new Map(junctions, roads);*/
 		
 		System.out.println("\n===========Testing the game============\n");
 		
-		DrivingGame game=new DrivingGame(10, 5);
+		DrivingGame game=new DrivingGame(10, 2);
 		game.play(10);
 	}
 }
