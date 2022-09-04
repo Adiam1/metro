@@ -1,29 +1,25 @@
+/*
+ * Yuval Gonen, ID: 314832163
+ * Adi Amshalem ID: 318784352
+ */
 import java.util.Random;
 
 public abstract class TrafficLight
 {
 	private int pulseTime;
 	private Junction junction;
-	final int maxVal = 4;
-	final int minVal = 2;
+	private final int maxVal = 4;
+	private final int minVal = 2;
 
 	public TrafficLight(Junction junction) 
 	{
 		super();
-		setPulseTime();
 		this.junction = junction;
 	}
 
-	public int getPulseTime() 
-	{
-		return pulseTime;
-	}
+	public abstract int getPulseTime();
 
-	public void setPulseTime() 
-	{
-		Random rand = new Random();
-		pulseTime = rand.nextInt(maxVal-minVal+1) + minVal;
-	}
+	public abstract void setPulseTime(); 
 	public Junction getJunction() 
 	{
 		return junction;
