@@ -1,5 +1,7 @@
-import java.util.Random;
-
+/*
+ * Yuval Gonen, ID: 314832163
+ * Adi Amshalem ID: 318784352
+ */
 public class SequentialTrafficLight extends TrafficLight
 {
 	Road currentGreen;
@@ -19,10 +21,14 @@ public class SequentialTrafficLight extends TrafficLight
 	@Override
 	public void check() 
 	{
-		if(this.getPulseTime() == 0)
+		if(this.getPulseTime() <= 0)
 		{
 			setPulseTime();
 			nextGreen();
+		}
+		else
+		{
+			pulseTime -= 1;
 		}
 	}
 

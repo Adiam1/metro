@@ -42,8 +42,4 @@ public abstract class TrafficLight
 	
 	public abstract void check();
 	public abstract Road getCurrentGreen();
-
-	
-	
-	
 }
