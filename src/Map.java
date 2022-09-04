@@ -1,3 +1,7 @@
+/*
+ * Yuval Gonen, ID: 314832163
+ * Adi Amshalem ID: 318784352
+ */
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -38,16 +42,7 @@ public class Map
 			}
 			blockedNumbers.clear();
 		}
-		for (int i = 0; i < junctionAmount;i++) 
-		{
-			if (0 < junctions.get(i).getEnteringRoads().size())
-			{
-				if (rand.nextBoolean() && rand.nextBoolean())
-				{
-					junctions.get(i).setTrafficLight();
-				}
-			}
-		}
+		creatingTrafficLight(junctionAmount);
 	}
 	
 	public Map(ArrayList<Junction> junctions, ArrayList<Road> roads)
@@ -55,7 +50,8 @@ public class Map
 		super();
 		setJunctions(junctions);
 		setRoads(roads);
-		//adding here traffic lights, junctions and roads are already given
+		int junctionAmount = junctions.size();
+		creatingTrafficLight(junctionAmount);
 	}
 
 	public ArrayList<Junction> getJunctions() 
@@ -105,6 +101,21 @@ public class Map
 		}
 		
 		return route;
+	}
+	
+	public void creatingTrafficLight(int junctionAmount)
+	{
+		Random rand = new Random();
+		for (int i = 0; i < junctionAmount;i++) 
+		{
+			if (0 < junctions.get(i).getEnteringRoads().size())
+			{
+				if (rand.nextBoolean() && rand.nextBoolean())
+				{
+					junctions.get(i).setTrafficLight();
+				}
+			}
+		}
 	}
 	
 }

@@ -19,10 +19,14 @@ public class RandomTrafficLight extends TrafficLight
 	@Override
 	public void check() 
 	{
-		if(this.getPulseTime() == 0)
+		if(this.getPulseTime() <= 0)
 		{
 			setPulseTime();
 			nextGreen();
+		}
+		else
+		{
+			pulseTime -= 1;
 		}
 	}
 
