@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Program {
+public class Program1 {
 
 	public static void main(String[] args) {
 		System.out.println("=========Testing class Point=========");
@@ -54,7 +54,7 @@ public class Program {
 		
 		System.out.println("\n===========Testing the game============\n");
 		
-		DrivingGame game=new DrivingGame(10, 2);
+		DrivingGame game=new DrivingGame(10, 10);
 		game.play(10);
 	}
 }
