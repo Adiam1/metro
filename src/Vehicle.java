@@ -49,6 +49,13 @@ public class Vehicle
 		this.currDistance += vehicleSpeed;
 		if(this.currDistance >= distance && numOfRoad < routeLength)
 		{
+			if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
+					route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad)) 
+			{
+				System.out.println("@Vehicle " + vehicleNum + " is waiting for green light on Junction" + route.get(numOfRoad).getEnd());
+				this.currDistance -= vehicleSpeed;
+				return;
+			}
 			numOfRoad += 1;
 			if(numOfRoad < routeLength)
 			{
@@ -61,16 +68,12 @@ public class Vehicle
 			System.out.println(this);
 		}
 		
-
-
-		
 		if(numOfRoad == routeLength)
 		{
 			System.out.println("Vehicle " + vehicleNum + " arrived to it's destination: " + route.get(numOfRoad - 1).getEnd());
 			
 		}
 	}
-
 
 
 	@Override
