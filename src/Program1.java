@@ -53,7 +53,7 @@ public class Program1 {
 		map=new Map(junctions, roads);
 		
 		System.out.println("\n===========Testing the game============\n");
-		
+
 		DrivingGame game=new DrivingGame(10, 2);
 		game.play(10);
 	}
