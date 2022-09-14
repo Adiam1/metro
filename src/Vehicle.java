@@ -52,7 +52,7 @@ public class Vehicle
 			if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
 					route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad)) 
 			{
-				System.out.println("@Vehicle " + vehicleNum + " is waiting for green light on Junction" + route.get(numOfRoad).getEnd());
+				System.out.println("Vehicle " + vehicleNum + " is waiting for green light on Junction" + route.get(numOfRoad).getEnd());
 				this.currDistance -= vehicleSpeed;
 				return;
 			}
