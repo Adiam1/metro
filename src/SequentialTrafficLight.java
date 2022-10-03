@@ -6,7 +6,7 @@ import java.util.Random;
  */
 public class SequentialTrafficLight extends TrafficLight
 {
-	Road currentGreen;
+	private Road currentGreen;
 	private int pulseTime;
 	private final int maxVal = 4;
 	private final int minVal = 2;
@@ -55,11 +55,12 @@ public class SequentialTrafficLight extends TrafficLight
 	public void nextGreen()
 	{
 		int size = this.getJunction().getEnteringRoads().size();
-		for (int i=0; i < size; i++)
+		for (int i = 0; i < size; i++)
 		{
 			if (this.getJunction().getEnteringRoads().get(i) == this.currentGreen) 
 			{
-				currentGreen = this.getJunction().getEnteringRoads().get(i++%size);
+				this.currentGreen = this.getJunction().getEnteringRoads().get((i+1)%size);
+				return;
 			}
 		}
 	}

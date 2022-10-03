@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class RandomTrafficLight extends TrafficLight
 {
-	Road currentGreen;
+	private Road currentGreen;
 	private int pulseTime;
 	private final int maxVal = 4;
 	private final int minVal = 2;
@@ -55,7 +55,7 @@ public class RandomTrafficLight extends TrafficLight
 		int size = this.getJunction().getEnteringRoads().size();
 		Random rand = new Random();
 		int nextIndex = rand.nextInt(size);
-		Road nextGreen = this.getJunction().getEnteringRoads().get(nextIndex);
+		this.currentGreen  = this.getJunction().getEnteringRoads().get(nextIndex);
 	}
 	
 	@Override

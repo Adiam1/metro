@@ -43,18 +43,26 @@ public class Vehicle
 
 
 
-	public void move()
+	public boolean move()
 	{
 		int routeLength = route.size();
 		this.currDistance += vehicleSpeed;
+		
+		if(numOfRoad == routeLength)
+		{
+			System.out.println("Vehicle " + vehicleNum + " arrived to it's destination: " + route.get(numOfRoad - 1).getEnd());
+			return true;
+		}
+		
 		if(this.currDistance >= distance && numOfRoad < routeLength)
 		{
+			
 			if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
 					route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad)) 
 			{
-				System.out.println("Vehicle " + vehicleNum + " is waiting for green light on Junction" + route.get(numOfRoad).getEnd());
+				System.out.println("Vehicle " + vehicleNum + " is waiting for green light on " + route.get(numOfRoad).getEnd());
 				this.currDistance -= vehicleSpeed;
-				return;
+				return false;
 			}
 			numOfRoad += 1;
 			if(numOfRoad < routeLength)
@@ -68,11 +76,8 @@ public class Vehicle
 			System.out.println(this);
 		}
 		
-		if(numOfRoad == routeLength)
-		{
-			System.out.println("Vehicle " + vehicleNum + " arrived to it's destination: " + route.get(numOfRoad - 1).getEnd());
-			
-		}
+		
+		return false;
 	}
 
 

@@ -8,10 +8,12 @@ public class DrivingGame
 {
 	private Map map;
 	private ArrayList<Vehicle> vehicles;
+	private int finishedVehicles;
 		
 	public DrivingGame(int junctionAmount, int vehicleAmount) 
 	{
 		map = new Map(junctionAmount);
+		finishedVehicles = 0;
 		this.vehicles = new ArrayList<Vehicle>();
 		
 		for(int i = 0; i < vehicleAmount; i++)
@@ -29,6 +31,7 @@ public class DrivingGame
 		
 		for(int i = 0; i < turns;i++)
 		{
+			
 			System.out.println("Turn "+ (i + 1));
 			
 			for(Vehicle v: vehicles)
@@ -43,6 +46,33 @@ public class DrivingGame
 					j.getTrafficLight().check();
 				}
 			}
+		}
+	}
+	
+	public void play()
+	{
+		int i = 1;
+		while(finishedVehicles < vehicles.size())
+		{
+			System.out.println("Turn "+ i);
+			
+			for(Vehicle v: vehicles)
+			{
+				if(v.move())
+				{
+					finishedVehicles += 1;
+				}
+			}
+			
+			for(Junction j: map.getJunctions())
+			{
+				if(j.getTrafficLight() != null)
+				{
+					j.getTrafficLight().check();
+				}
+			}
+			
+			i++;
 		}
 	}
 }
