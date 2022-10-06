@@ -16,6 +16,7 @@ public class Vehicle
 	private int vehicleSpeed;
 	private final int minSpeed = 30;
 	private final int maxSpeed = 120;
+	private boolean hasPassenger = false;
 	public Vehicle(Map map)
 	{
 		super();
@@ -40,15 +41,23 @@ public class Vehicle
 	{
 		this.numOfRoad = numOfRoad;
 	}
+	
+	public ArrayList<Road> getRoute() 
+	{
+		return route;
+	}
 
+	public void setRoute(ArrayList<Road> route) 
+	{
+		this.route = route;
+	}
 
-
-	public boolean move()
+	public boolean move(ArrayList<Passenger> passengersList)
 	{
 		int routeLength = route.size();
 		this.currDistance += vehicleSpeed;
 		
-		if(numOfRoad == routeLength)
+		if(numOfRoad == routeLength) // vehicle arrival
 		{
 			System.out.println("Vehicle " + vehicleNum + " arrived to it's destination: " + route.get(numOfRoad - 1).getEnd());
 			return true;
@@ -56,10 +65,20 @@ public class Vehicle
 		
 		System.out.println(this);
 		
-		if(this.currDistance >= distance)
+		if(this.currDistance >= distance) // handle vehicle movement
 		{
+			for(Passenger p: passengersList)
+			{
+				if(p.getInitialJunction().getJunctionNum() == this.getRoute().get(numOfRoad).getEnd().getJunctionNum() && hasPassenger == false) //checks if there is passenger
+				{
+					hasPassenger = true;
+					this.setRoute(p.getPassengerRoute()); //check  if works
+				}
+				
+			}
+			
 			if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
-					route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad)) 
+					route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad))  // handle traffic lights
 			{
 				System.out.println("Vehicle " + vehicleNum + " is waiting for green light on " + route.get(numOfRoad).getEnd());
 				this.currDistance -= vehicleSpeed;
@@ -72,7 +91,6 @@ public class Vehicle
 				
 			}
 		}
-
 		return false;
 	}
 

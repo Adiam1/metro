@@ -8,6 +8,7 @@ public class DrivingGame
 {
 	private Map map;
 	private ArrayList<Vehicle> vehicles;
+	private ArrayList<Passenger> passengersList;
 	private int finishedVehicles;
 		
 	public DrivingGame(int junctionAmount, int vehicleAmount) 
@@ -15,51 +16,32 @@ public class DrivingGame
 		map = new Map(junctionAmount);
 		finishedVehicles = 0;
 		this.vehicles = new ArrayList<Vehicle>();
+		this.passengersList = new ArrayList<Passenger>();
 		
 		for(int i = 0; i < vehicleAmount; i++)
 		{
 			this.vehicles.add(new Vehicle(map));
 		}
 	}
-	
-	public void play(int turns)
-	{
-		if(turns <= 0)
-		{
-			return;
-		}
-		
-		for(int i = 0; i < turns;i++)
-		{
-			
-			System.out.println("Turn "+ (i + 1));
-			
-			for(Vehicle v: vehicles)
-			{
-				v.move();
-			}
-			
-			for(Junction j: map.getJunctions())
-			{
-				if(j.getTrafficLight() != null)
-				{
-					j.getTrafficLight().check();
-				}
-			}
-		}
-	}
+
 	
 	public void play()
 	{
-		int i = 1;
+		int turnCount = 1;
 		while(finishedVehicles < vehicles.size())
 		{
 			finishedVehicles = 0;
-			System.out.println("Turn "+ i);
+			System.out.println("Turn "+ turnCount);
+			
+			if(turnCount % 3 == 0)
+			{
+				Passenger passenger = new Passenger(map);
+				passengersList.add(passenger);
+			}
 			
 			for(Vehicle v: vehicles)
 			{
-				if(v.move())
+				if(v.move(passengersList))
 				{
 					finishedVehicles += 1;
 				}
@@ -73,7 +55,7 @@ public class DrivingGame
 				}
 			}
 			
-			i++;
+			turnCount++;
 		}
 	}
 }
