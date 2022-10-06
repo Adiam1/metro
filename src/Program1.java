@@ -55,6 +55,7 @@ public class Program1 {
 		
 		System.out.println("\n===========Testing the game============\n");
 		*/
+		
 		DrivingGame game=new DrivingGame(5, 5); // junks, vehicles
 		game.play();
 	}
