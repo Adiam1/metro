@@ -54,9 +54,10 @@ public class Vehicle
 			return true;
 		}
 		
-		if(this.currDistance >= distance && numOfRoad < routeLength)
+		System.out.println(this);
+		
+		if(this.currDistance >= distance)
 		{
-			
 			if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
 					route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad)) 
 			{
@@ -68,15 +69,10 @@ public class Vehicle
 			if(numOfRoad < routeLength)
 			{
 				distance += route.get(numOfRoad).getLength();
-				System.out.println(this);
+				
 			}
 		}
-		else if(this.currDistance < distance && numOfRoad < routeLength)
-		{
-			System.out.println(this);
-		}
-		
-		
+
 		return false;
 	}
 

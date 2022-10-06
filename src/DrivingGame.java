@@ -54,6 +54,7 @@ public class DrivingGame
 		int i = 1;
 		while(finishedVehicles < vehicles.size())
 		{
+			finishedVehicles = 0;
 			System.out.println("Turn "+ i);
 			
 			for(Vehicle v: vehicles)
