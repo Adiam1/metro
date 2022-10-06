@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Program1 {
 
 	public static void main(String[] args) {
+		/*
 		System.out.println("=========Testing class Point=========");
 		Point a=new Point(0,0);
 		Point b=new Point(8,6);
@@ -53,8 +54,8 @@ public class Program1 {
 		map=new Map(junctions, roads);
 		
 		System.out.println("\n===========Testing the game============\n");
-
-		DrivingGame game=new DrivingGame(10, 10);
+		*/
+		DrivingGame game=new DrivingGame(5, 5); // junks, vehicles
 		game.play();
 	}
 }

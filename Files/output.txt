@@ -1,0 +1,360 @@
+Creating Junction 1 at Point (430.10, 213.92)
+Creating Junction 2 at Point (101.48, 3.63)
+Creating Junction 3 at Point (492.49, 92.34)
+Creating Junction 4 at Point (608.52, 253.89)
+Creating Junction 5 at Point (322.16, 183.13)
+Creating Junction 6 at Point (180.68, 349.64)
+Creating Junction 7 at Point (690.49, 499.97)
+Creating Junction 8 at Point (745.94, 126.30)
+Creating Junction 9 at Point (246.27, 457.67)
+Creating Junction 10 at Point (194.25, 554.37)
+Creating Road from Junction 2 to Junction 4, length: 565.44
+Creating Road from Junction 2 to Junction 6, length: 354.96
+Creating Road from Junction 2 to Junction 7, length: 770.25
+Creating Road from Junction 2 to Junction 10, length: 558.49
+Creating Road from Junction 3 to Junction 4, length: 198.90
+Creating Road from Junction 3 to Junction 5, length: 193.01
+Creating Road from Junction 3 to Junction 7, length: 453.17
+Creating Road from Junction 4 to Junction 1, length: 182.84
+Creating Road from Junction 4 to Junction 2, length: 565.44
+Creating Road from Junction 4 to Junction 8, length: 187.52
+Creating Road from Junction 4 to Junction 10, length: 511.76
+Creating Road from Junction 5 to Junction 2, length: 284.46
+Creating Road from Junction 5 to Junction 8, length: 427.57
+Creating Road from Junction 5 to Junction 9, length: 284.84
+Creating Road from Junction 5 to Junction 10, length: 392.65
+Creating Road from Junction 6 to Junction 1, length: 283.96
+Creating Road from Junction 6 to Junction 3, length: 404.26
+Creating Road from Junction 6 to Junction 4, length: 438.43
+Creating Road from Junction 6 to Junction 5, length: 218.50
+Creating Road from Junction 6 to Junction 7, length: 531.51
+Creating Road from Junction 6 to Junction 8, length: 607.79
+Creating Road from Junction 6 to Junction 10, length: 205.17
+Creating Road from Junction 7 to Junction 2, length: 770.25
+Creating Road from Junction 7 to Junction 3, length: 453.17
+Creating Road from Junction 7 to Junction 4, length: 259.38
+Creating Road from Junction 7 to Junction 6, length: 531.51
+Creating Road from Junction 7 to Junction 8, length: 377.77
+Creating Road from Junction 7 to Junction 9, length: 446.23
+Creating Road from Junction 8 to Junction 2, length: 656.03
+Creating Road from Junction 8 to Junction 6, length: 607.79
+Creating Road from Junction 8 to Junction 9, length: 599.57
+Creating Road from Junction 8 to Junction 10, length: 698.28
+Creating Road from Junction 9 to Junction 1, length: 305.30
+Creating Road from Junction 9 to Junction 3, length: 440.56
+Creating Road from Junction 9 to Junction 6, length: 126.38
+Creating Road from Junction 9 to Junction 7, length: 446.23
+Creating Road from Junction 9 to Junction 10, length: 109.80
+Creating Road from Junction 10 to Junction 5, length: 392.65
+Creating Road from Junction 10 to Junction 6, length: 205.17
+Creating Road from Junction 10 to Junction 8, length: 698.28
+Creating Road from Junction 10 to Junction 9, length: 109.80
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 4 to Junction 8
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 5 to Junction 9
+Creating Vehicle 1,speed: 114, path: [Road from Junction 9 to Junction 3, Road from Junction 3 to Junction 4, Road from Junction 4 to Junction 10, Road from Junction 10 to Junction 6]
+Creating Vehicle 2,speed: 40, path: [Road from Junction 10 to Junction 5, Road from Junction 5 to Junction 2, Road from Junction 2 to Junction 10, Road from Junction 10 to Junction 5]
+Creating Vehicle 3,speed: 52, path: [Road from Junction 9 to Junction 1]
+Creating Vehicle 4,speed: 66, path: [Road from Junction 7 to Junction 8, Road from Junction 8 to Junction 2, Road from Junction 2 to Junction 7, Road from Junction 7 to Junction 9]
+Creating Vehicle 5,speed: 110, path: [Road from Junction 2 to Junction 6, Road from Junction 6 to Junction 4, Road from Junction 4 to Junction 1]
+
+Turn 1
+Vehicle 1 is moving on the Road from Junction 9 to Junction 3
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 is moving on the Road from Junction 9 to Junction 1
+Vehicle 4 is moving on the Road from Junction 7 to Junction 8
+Vehicle 5 is moving on the Road from Junction 2 to Junction 6
+
+Turn 2
+Vehicle 1 is moving on the Road from Junction 9 to Junction 3
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 is moving on the Road from Junction 9 to Junction 1
+Vehicle 4 is moving on the Road from Junction 7 to Junction 8
+Vehicle 5 is moving on the Road from Junction 2 to Junction 6
+
+Turn 3
+Vehicle 1 is moving on the Road from Junction 9 to Junction 3
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 is moving on the Road from Junction 9 to Junction 1
+Vehicle 4 is moving on the Road from Junction 7 to Junction 8
+Vehicle 5 is moving on the Road from Junction 2 to Junction 6
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 5 to Junction 8
+Passenger 1 is waiting for vehicle at Junction 6, path: [Road from Junction 6 to Junction 4, Road from Junction 4 to Junction 1]
+
+Turn 4
+Vehicle 1 is moving on the Road from Junction 3 to Junction 4
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 is moving on the Road from Junction 9 to Junction 1
+Vehicle 4 is moving on the Road from Junction 7 to Junction 8
+Vehicle 5 is collecting Passenger 1 at Junction 6
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 7 to Junction 9
+
+Turn 5
+Vehicle 1 is moving on the Road from Junction 3 to Junction 4
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 is moving on the Road from Junction 9 to Junction 1
+Vehicle 4 is moving on the Road from Junction 7 to Junction 8
+Vehicle 5 is moving on the Road from Junction 4 to Junction 1
+
+Turn 6
+Vehicle 1 is moving on the Road from Junction 4 to Junction 10
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is waiting for green light on Junction 8
+Vehicle 5 is moving on the Road from Junction 4 to Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 6 to Junction 8
+Passenger 2 is waiting for vehicle at Junction 2, path: [Road from Junction 2 to Junction 6, Road from Junction 6 to Junction 10, Road from Junction 10 to Junction 5, Road from Junction 5 to Junction 8]
+
+Turn 7
+Vehicle 1 is moving on the Road from Junction 4 to Junction 10
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is waiting for green light on Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+Passenger 1 arrived to the destination with Vehicle 5
+
+Turn 8
+Vehicle 1 is moving on the Road from Junction 4 to Junction 10
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is waiting for green light on Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 8 to Junction 9
+
+Turn 9
+Vehicle 1 is moving on the Road from Junction 4 to Junction 10
+Vehicle 2 is moving on the Road from Junction 10 to Junction 5
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is waiting for green light on Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 7 to Junction 8
+Passenger 3 is waiting for vehicle at Junction 5, path: [Road from Junction 5 to Junction 2, Road from Junction 2 to Junction 6, Road from Junction 6 to Junction 1]
+
+Turn 10
+Vehicle 1 is moving on the Road from Junction 4 to Junction 10
+Vehicle 2 is collecting Passenger 3 at Junction 5
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 11
+Vehicle 1 is moving on the Road from Junction 10 to Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 12
+Vehicle 1 is moving on the Road from Junction 10 to Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 10 to Junction 8
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 10 to Junction 9
+Passenger 4 is waiting for vehicle at Junction 5, path: [Road from Junction 5 to Junction 8, Road from Junction 8 to Junction 6, Road from Junction 6 to Junction 10, Road from Junction 10 to Junction 9]
+
+Turn 13
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 14
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 15
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 4 to Junction 8
+Passenger 5 is waiting for vehicle at Junction 10, path: [Road from Junction 10 to Junction 9, Road from Junction 9 to Junction 6, Road from Junction 6 to Junction 5, Road from Junction 5 to Junction 2]
+
+Turn 16
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 5 to Junction 9
+
+Turn 17
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 18
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 5 to Junction 8
+Passenger 6 is waiting for vehicle at Junction 10, path: [Road from Junction 10 to Junction 8, Road from Junction 8 to Junction 6, Road from Junction 6 to Junction 10, Road from Junction 10 to Junction 6]
+
+Turn 19
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 2 to Junction 6
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 8 to Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 20
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is collecting Passenger 2 at Junction 2
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 7 to Junction 9
+
+Turn 21
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 6 to Junction 10
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 6 to Junction 8
+Passenger 7 is waiting for vehicle at Junction 8, path: [Road from Junction 8 to Junction 6, Road from Junction 6 to Junction 3, Road from Junction 3 to Junction 4, Road from Junction 4 to Junction 8]
+
+Turn 22
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 6 to Junction 10
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 23
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 6 to Junction 10
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 24
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 6 to Junction 10
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 7 to Junction 8
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 8 to Junction 9
+Passenger 8 is waiting for vehicle at Junction 4, path: [Road from Junction 4 to Junction 10, Road from Junction 10 to Junction 6, Road from Junction 6 to Junction 7, Road from Junction 7 to Junction 2]
+
+Turn 25
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 10 to Junction 5
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 26
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 10 to Junction 5
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 27
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 is moving on the Road from Junction 6 to Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 10 to Junction 5
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 10 to Junction 8
+Passenger 9 is waiting for vehicle at Junction 3, path: [Road from Junction 3 to Junction 4, Road from Junction 4 to Junction 2, Road from Junction 2 to Junction 6, Road from Junction 6 to Junction 8]
+
+Turn 28
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Passenger 3 arrived to the destination with Vehicle 2
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 10 to Junction 5
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 10 to Junction 9
+
+Turn 29
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 10 to Junction 5
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 30
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 10 to Junction 5
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 4 to Junction 8
+Passenger 10 is waiting for vehicle at Junction 2, path: [Road from Junction 2 to Junction 4, Road from Junction 4 to Junction 8, Road from Junction 8 to Junction 10, Road from Junction 10 to Junction 6]
+
+Turn 31
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 32
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 5 to Junction 9
+
+Turn 33
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 5 to Junction 8
+Passenger 11 is waiting for vehicle at Junction 3, path: [Road from Junction 3 to Junction 5, Road from Junction 5 to Junction 8, Road from Junction 8 to Junction 2, Road from Junction 2 to Junction 10]
+
+Turn 34
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 35
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 36
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+Sequential TrafficLights Junction 8, delay= 3: green light on Road from Junction 6 to Junction 8
+Sequential TrafficLights Junction 9, delay= 4: green light on Road from Junction 7 to Junction 9
+Passenger 12 is waiting for vehicle at Junction 5, path: [Road from Junction 5 to Junction 8, Road from Junction 8 to Junction 6, Road from Junction 6 to Junction 1]
+
+Turn 37
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 is moving on the Road from Junction 5 to Junction 8
+Vehicle 5 arrived to it's destination: Junction 1
+
+Turn 38
+Vehicle 1 arrived to it's destination: Junction 6
+Vehicle 2 arrived to it's destination: Junction 1
+Vehicle 3 arrived to it's destination: Junction 1
+Vehicle 4 arrived to it's destination: Junction 8
+Passenger 2 arrived to the destination with Vehicle 4
+Vehicle 5 arrived to it's destination: Junction 1
