@@ -40,40 +40,49 @@ public class DrivingGame
 	    writer.close();
 	}
 	
-	public void play() throws IOException
+	public void play()
 	{
-		int turnCount = 1;
-		initiateReport();
-		
-		while(finishedVehicles < vehicles.size())
+		try
 		{
-			finishedVehicles = 0;
-			System.out.println("Turn "+ turnCount);
+			int turnCount = 1;
+			initiateReport();
 			
-			if(turnCount % 3 == 0)
+			while(finishedVehicles < vehicles.size())
 			{
-				Passenger passenger = new Passenger(map);
-				passengersList.add(passenger);
-				System.out.println(passenger.toString() + " is waiting for vehicle at " + passenger.getInitialJunction() + ", path: " + passenger.getPassengerRoute());
-			}
-			
-			for(Vehicle v: vehicles)
-			{
-				if(v.move(passengersList))
+				finishedVehicles = 0;
+				System.out.println("Turn "+ turnCount);
+				
+				if(turnCount % 3 == 0)
 				{
-					finishedVehicles += 1;
+					Passenger passenger = new Passenger(map);
+					passengersList.add(passenger);
+					System.out.println(passenger.toString() + " is waiting for vehicle at " + passenger.getInitialJunction() + ", path: " + passenger.getPassengerRoute());
 				}
-			}
-			
-			for(Junction j: map.getJunctions())
-			{
-				if(j.getTrafficLight() != null)
+				
+				for(Vehicle v: vehicles)
 				{
-					j.getTrafficLight().check();
+					if(v.move(passengersList))
+					{
+						finishedVehicles += 1;
+					}
 				}
+				
+				for(Junction j: map.getJunctions())
+				{
+					if(j.getTrafficLight() != null)
+					{
+						j.getTrafficLight().check();
+					}
+				}
+				
+				turnCount++;
 			}
-			
-			turnCount++;
 		}
+		
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 }

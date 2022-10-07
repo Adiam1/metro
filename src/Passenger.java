@@ -43,7 +43,7 @@ public class Passenger
 		this.initialJunction = startJunction;
 	}
 	
-	public void addToReport(int vehicleNum) throws IOException
+	public void addToReport(int vehicleNum)
 	{
 		String fileName = "report.txt";
 		int length = passengerRoute.size();
