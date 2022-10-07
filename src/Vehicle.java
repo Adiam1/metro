@@ -53,7 +53,7 @@ public class Vehicle
 		this.route = route;
 	}
 
-	public boolean move(ArrayList<Passenger> passengersList) throws IOException
+	public boolean move(ArrayList<Passenger> passengersList)
 	{
 		int routeLength = route.size();
 		this.currDistance += vehicleSpeed;
