@@ -2,6 +2,11 @@
  * Yuval Gonen, ID: 314832163
  * Adi Amshalem ID: 318784352
  */
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 
 public class DrivingGame 
@@ -24,10 +29,22 @@ public class DrivingGame
 		}
 	}
 
+	public static void initiateReport() throws IOException
+	{
+		String fileName = "report.txt";
+		String str = "  Vehicle   |   Passenger   |     From   |     To    \n"
+				+ "------------|---------------|------------|------------\n";
+	    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+	    writer.write(str);
+	    
+	    writer.close();
+	}
 	
-	public void play()
+	public void play() throws IOException
 	{
 		int turnCount = 1;
+		initiateReport();
+		
 		while(finishedVehicles < vehicles.size())
 		{
 			finishedVehicles = 0;
@@ -37,6 +54,7 @@ public class DrivingGame
 			{
 				Passenger passenger = new Passenger(map);
 				passengersList.add(passenger);
+				System.out.println(passenger.toString() + " is waiting for vehicle at " + passenger.getInitialJunction() + ", path: " + passenger.getPassengerRoute());
 			}
 			
 			for(Vehicle v: vehicles)
