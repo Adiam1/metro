@@ -1,3 +1,10 @@
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.nio.file.Files;
 import java.util.ArrayList;
 
 public class Passenger 
@@ -35,11 +42,33 @@ public class Passenger
 	{
 		this.initialJunction = startJunction;
 	}
+	
+	public void addToReport(int vehicleNum) throws IOException
+	{
+		String fileName = "report.txt";
+		int length = passengerRoute.size();
+		int endJunction = passengerRoute.get(length - 1).getEnd().getJunctionNum();
+		String passengerReport = String.format("Vehicle %-4d|Passenger %-5d|Junction %-3d|Junction %-3d\n", vehicleNum, passengerNum, initialJunction.getJunctionNum(), endJunction);
+		try
+		{
+			FileWriter fw = new FileWriter(fileName, true);
+			BufferedWriter writer = new BufferedWriter(fw);
+			
+			writer.write(passengerReport);
+			writer.close();
+		}
+		catch(Exception e) 
+		{
+			
+		}
+		
+	}
+
 
 	@Override
 	public String toString() 
 	{
-		return "Passenger " + passengerNum + " is waiting for vehicle at " + initialJunction + ", path: " + passengerRoute;
+		return "Passenger " + passengerNum;
 	}
 
 }

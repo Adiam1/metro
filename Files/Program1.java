@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Program1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		/*
 		System.out.println("=========Testing class Point=========");
 		Point a=new Point(0,0);
@@ -56,7 +57,7 @@ public class Program1 {
 		System.out.println("\n===========Testing the game============\n");
 		*/
 		
-		DrivingGame game=new DrivingGame(5, 5); // junks, vehicles
+		DrivingGame game=new DrivingGame(10, 10); // junks, vehicles
 		game.play();
 	}
 }
