@@ -9,12 +9,14 @@ public class Map
 {
 	private ArrayList<Junction> junctions;
 	private ArrayList<Road> roads;
+	private ArrayList<Passenger> passengersList;
 
-	public Map(int junctionAmount) 
+	public Map(int junctionAmount, ArrayList<Passenger> passengersList) 
 	{
 		super();
 		this.junctions = new ArrayList<Junction>();
 		this.roads = new ArrayList<Road>();
+		this.passengersList = passengersList;
 		for(int i = 0; i < junctionAmount; i++)
 		{
 			junctions.add(new Junction());
@@ -28,8 +30,8 @@ public class Map
 		int num;
 		for(int j = 0; j < junctionAmount; j++)
 		{
-			blockedNumbers.add(j)
-;			for(int i = 0; i< rand.nextInt(junctionAmount); i++)
+			blockedNumbers.add(j);
+			for(int i = 0; i< rand.nextInt(junctionAmount); i++)
 			{
 				num = rand.nextInt(junctionAmount);
 				while (blockedNumbers.contains(num))
@@ -52,6 +54,13 @@ public class Map
 		setRoads(roads);
 		int junctionAmount = junctions.size();
 		creatingTrafficLight(junctionAmount);
+	}
+	
+	
+
+	public ArrayList<Passenger> getPassengersList() 
+	{
+		return passengersList;
 	}
 
 	public ArrayList<Junction> getJunctions() 

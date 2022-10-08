@@ -3,7 +3,7 @@ public class Program
 
 	public static void main(String[] args)
 	{
-		DrivingGame game = new DrivingGame(10, 5);
+		DrivingGame game = new DrivingGame(10, 10);
 		game.play();
 	}
 

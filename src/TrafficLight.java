@@ -4,7 +4,7 @@
  */
 import java.util.Random;
 
-public abstract class TrafficLight
+public abstract class TrafficLight implements Dynamic
 {
 	private int pulseTime;
 	private Junction junction;
@@ -36,6 +36,6 @@ public abstract class TrafficLight
 		return "TrafficLights Junction " + this.junction.getJunctionNum() + ", delay= " + getPulseTime()+ ": green light on " + this.getCurrentGreen();
 	}
 	
-	public abstract void check();
+	public abstract void executeTurn();
 	public abstract Road getCurrentGreen();
 }
