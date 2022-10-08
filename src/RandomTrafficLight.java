@@ -33,8 +33,7 @@ public class RandomTrafficLight extends TrafficLight
 		pulseTime = rand.nextInt(maxVal-minVal+1) + minVal;
 	}
 
-	@Override
-	public void check() 
+	public void executeTurn() 
 	{
 		if(this.pulseTime <= 0)
 		{

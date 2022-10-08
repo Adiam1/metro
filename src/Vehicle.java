@@ -2,7 +2,6 @@
  * Yuval Gonen, ID: 314832163
  * Adi Amshalem ID: 318784352
  */
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,9 +17,13 @@ public class Vehicle
 	private final int minSpeed = 30;
 	private final int maxSpeed = 120;
 	private Passenger passenger;
+	private Map map;
+	private boolean isFinished = false;
+	
 	public Vehicle(Map map)
 	{
 		super();
+		this.map = map;
 		this.route = map.creatingRoute();
 		distance = route.get(numOfRoad).getLength();
 		vehicleNum = ++counter;
@@ -31,12 +34,15 @@ public class Vehicle
 	
 	
 	
+	public boolean isFinished() 
+	{
+		return isFinished;
+	}
+	
 	public int getNumOfRoad() 
 	{
 		return numOfRoad;
 	}
-
-
 
 	public void setNumOfRoad(int numOfRoad) 
 	{
@@ -53,12 +59,11 @@ public class Vehicle
 		this.route = route;
 	}
 
-	public boolean move(ArrayList<Passenger> passengersList)
+	public void executeTurn()
 	{
-		int routeLength = route.size();
 		this.currDistance += vehicleSpeed;
 		
-		if(numOfRoad == routeLength) // vehicle arrival
+		if(numOfRoad == route.size()) // vehicle arrival
 		{
 			System.out.println("Vehicle " + vehicleNum + " arrived to it's destination: " + route.get(numOfRoad - 1).getEnd());
 			
@@ -68,61 +73,51 @@ public class Vehicle
 				passenger.addToReport(vehicleNum);
 				passenger = null;
 			}
-			return true;
+			isFinished = true;
+			return;
 		}
-		
 		System.out.println(this + " is moving on the " + route.get(numOfRoad));
+
 		
-		if(this.currDistance >= distance) // handle vehicle movement
+		if(this.currDistance >= distance)
 		{
-			for(int p = 0; p < passengersList.size(); p++)
-			{
-				if(passengersList.get(p).getInitialJunction().getJunctionNum() == this.getRoute().get(numOfRoad).getEnd().getJunctionNum() && passenger == null) //checks if there is passenger
-				{
-					passenger = passengersList.get(p);
-					double distanceRemainder = currDistance - distance;
-					
-					this.setRoute(passenger.getPassengerRoute());
-					routeLength = route.size();
-					numOfRoad = 0;
-					currDistance = distanceRemainder;
-					distance = route.get(numOfRoad).getLength();
-					passengersList.remove(passenger);
-					
-				}
-				
-			}
+			takeRelevantPassenger();
 			
-		if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
+			if (route.get(numOfRoad).getEnd().getTrafficLight() != null &&
 						route.get(numOfRoad).getEnd().getTrafficLight().getCurrentGreen() != route.get(numOfRoad))  // handle traffic lights
 			{
 				System.out.println("Vehicle " + vehicleNum + " is waiting for green light on " + route.get(numOfRoad).getEnd());
 				this.currDistance -= vehicleSpeed;
-				return false;
 			}
 			numOfRoad += 1;
-			if(numOfRoad < routeLength)
+			if(numOfRoad < route.size())
 			{
-				try 
-				{
-					distance += route.get(numOfRoad).getLength();
-				}
-				catch(Exception e)
-				{
-					distance+=0;
-				}
+				distance += route.get(numOfRoad).getLength();
 			}
 		}
-		return false;
 	}
 
-
+	private void takeRelevantPassenger() 
+	{
+		for(int p = 0; p < map.getPassengersList().size(); p++)
+		{
+			if(map.getPassengersList().get(p).getInitialJunction().getJunctionNum() == this.getRoute().get(numOfRoad).getEnd().getJunctionNum() && passenger == null) //checks if there is passenger
+			{
+				passenger = map.getPassengersList().get(p);
+				double distanceRemainder = currDistance - distance;
+				this.setRoute(passenger.getPassengerRoute());
+				numOfRoad = 0;
+				currDistance = distanceRemainder;
+				distance = route.get(numOfRoad).getLength();
+				map.getPassengersList().remove(passenger);
+				break;
+			}
+			
+		}
+	}
 	@Override
 	public String toString() 
 	{
 		return "Vehicle " + vehicleNum;
 	}
-	
-	
-
 }

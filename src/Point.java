@@ -40,11 +40,12 @@ public class Point
 	}
 	public void setX(double x) 
 	{
-		if (validate(x, maxX)) 
+		try
 		{
+			validate(x, maxX);
 			this.x = x;
 		}
-		else
+		catch (IllegalArgumentException e)
 		{
 			Random rand = new Random();
 			this.x = rand.nextDouble() * maxX;
@@ -57,11 +58,12 @@ public class Point
 	}
 	public void setY(double y) 
 	{
-		if (validate(y, maxY))
+		try
 		{
+			validate(y, maxY);
 			this.y = y;
 		}
-		else
+		catch (IllegalArgumentException e)
 		{
 			Random rand = new Random();
 			this.y = rand.nextDouble() * maxY;
@@ -69,9 +71,13 @@ public class Point
 		}
 	}
 	
-	private boolean validate(double variable, int maxValue) 
+	private void validate(double variable, int maxValue) 
 	{
-		return (0 <= variable && variable <= maxValue);
+		if (0 > variable || variable > maxValue)
+		{
+			throw new IllegalArgumentException();
+		}
+		
 	}
 	public double calcDistance(Point other) 
 	{
