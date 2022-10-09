@@ -39,14 +39,17 @@ public class Road
 	{
 		return "Road from " + exitingJunction + " to " + enteringJunction;
 	}
+	
 	public Junction getStart()
 	{
 		
 		return this.exitingJunction;
 	}
+	
 	public Junction getEnd()
 	{
 		
 		return this.enteringJunction;
 	}
+	
 }

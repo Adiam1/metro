@@ -38,6 +38,7 @@ public class Point
 	{
 		return x;
 	}
+	
 	public void setX(double x) 
 	{
 		try
@@ -52,10 +53,12 @@ public class Point
 			System.out.println(String.format("%.2f is illegal value for x and has been replaced with %f", x, this.x));
 		}
 	}
+	
 	public double getY() 
 	{
 		return y;
 	}
+	
 	public void setY(double y) 
 	{
 		try
@@ -77,8 +80,8 @@ public class Point
 		{
 			throw new IllegalArgumentException();
 		}
-		
 	}
+	
 	public double calcDistance(Point other) 
 	{
 		double index1 = other.x - this.x;
@@ -86,6 +89,5 @@ public class Point
 		double total = index1 * index1 + index2 * index2;
 		return Math.sqrt(total);
 	}
-
 	
 }

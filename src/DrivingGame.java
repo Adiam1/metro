@@ -48,7 +48,17 @@ public class DrivingGame
 	
 		int turnCount = 1;
 		initiateReport();
-		
+		ArrayList<Dynamic> workers = new ArrayList<Dynamic>();
+
+		workers.addAll(vehicles);
+			
+		for(Junction j: map.getJunctions())
+		{
+			if(j.getTrafficLight() != null)
+			{
+				workers.add(j.getTrafficLight());
+			}
+		}
 		while(!gameFinished)
 		{
 			gameFinished = true;
@@ -60,20 +70,11 @@ public class DrivingGame
 				passengersList.add(passenger);
 				System.out.println(passenger.toString() + " is waiting for vehicle at " + passenger.getInitialJunction() + ", path: " + passenger.getPassengerRoute());
 			}
-			
-			for(Vehicle v: vehicles)
+			for(Dynamic d: workers)
 			{
-				v.executeTurn();
-				
+				d.executeTurn();
 			}
-			
-			for(Junction j: map.getJunctions())
-			{
-				if(j.getTrafficLight() != null)
-				{
-					j.getTrafficLight().executeTurn();
-				}
-			}
+	
 			for (Vehicle v: vehicles)
 			{
 				if(!v.isFinished())

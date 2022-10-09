@@ -22,6 +22,7 @@ public class RandomTrafficLight extends TrafficLight
 		}
 
 	}
+	
 	public int getPulseTime() 
 	{
 		return pulseTime;
@@ -49,6 +50,7 @@ public class RandomTrafficLight extends TrafficLight
 	{
 		return currentGreen;
 	}
+	
 	public void nextGreen()
 	{
 		int size = this.getJunction().getEnteringRoads().size();

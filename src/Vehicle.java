@@ -5,7 +5,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Vehicle 
+public class Vehicle implements Dynamic
 {
 	private static int counter = 0;
 	private double currDistance = 0;
@@ -31,8 +31,6 @@ public class Vehicle
 		vehicleSpeed = rand.nextInt(maxSpeed - minSpeed) + minSpeed;
 		System.out.println("Creating Vehicle "  + vehicleNum + ", speed: " + vehicleSpeed + ", path: " + route);
 	}
-	
-	
 	
 	public boolean isFinished() 
 	{
@@ -79,7 +77,7 @@ public class Vehicle
 		System.out.println(this + " is moving on the " + route.get(numOfRoad));
 
 		
-		if(this.currDistance >= distance)
+		if(this.currDistance >= distance) //vehicle switching road in route
 		{
 			takeRelevantPassenger();
 			
@@ -101,7 +99,8 @@ public class Vehicle
 	{
 		for(int p = 0; p < map.getPassengersList().size(); p++)
 		{
-			if(map.getPassengersList().get(p).getInitialJunction().getJunctionNum() == this.getRoute().get(numOfRoad).getEnd().getJunctionNum() && passenger == null) //checks if there is passenger
+			if(map.getPassengersList().get(p).getInitialJunction().getJunctionNum() == this.getRoute().get(numOfRoad).getEnd().getJunctionNum() 
+					&& passenger == null) //checks if there is passenger
 			{
 				passenger = map.getPassengersList().get(p);
 				double distanceRemainder = currDistance - distance;
@@ -112,12 +111,13 @@ public class Vehicle
 				map.getPassengersList().remove(passenger);
 				break;
 			}
-			
 		}
 	}
+	
 	@Override
 	public String toString() 
 	{
 		return "Vehicle " + vehicleNum;
 	}
+	
 }
