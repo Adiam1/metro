@@ -1,9 +1,10 @@
-import java.util.Random;
-
 /*
  * Yuval Gonen, ID: 314832163
  * Adi Amshalem ID: 318784352
  */
+
+import java.util.Random;
+
 public class SequentialTrafficLight extends TrafficLight
 {
 	private Road currentGreen;
@@ -51,6 +52,7 @@ public class SequentialTrafficLight extends TrafficLight
 	{
 		return currentGreen;
 	}
+	
 	public void nextGreen()
 	{
 		int size = this.getJunction().getEnteringRoads().size();
@@ -69,4 +71,5 @@ public class SequentialTrafficLight extends TrafficLight
 	{
 		return "Sequential " + super.toString();
 	}
+	
 }

@@ -56,8 +56,6 @@ public class Map
 		creatingTrafficLight(junctionAmount);
 	}
 	
-	
-
 	public ArrayList<Passenger> getPassengersList() 
 	{
 		return passengersList;

@@ -89,8 +89,5 @@ public class Junction extends Point
 		}
 		
 		System.out.println(this.trafficLight);
-		
 	}
-	
-	
 }

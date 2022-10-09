@@ -1,3 +1,8 @@
+/*
+ * Yuval Gonen, ID: 314832163
+ * Adi Amshalem ID: 318784352
+ */
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -16,9 +21,7 @@ public class Passenger
 		this.initialJunction = passengerRoute.get(0).getStart();
 		passengerNum = ++counter;
 	}
-	
 
-	
 	public ArrayList<Road> getPassengerRoute() 
 	{
 		return passengerRoute;
@@ -57,9 +60,7 @@ public class Passenger
 		{
 			e.printStackTrace();
 		}
-		
 	}
-
 
 	@Override
 	public String toString() 
